@@ -1,0 +1,22 @@
+@import "./styles/utils/_variables.scss";
+
+#root {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: auto;
+}
+
+footer {
+  flex-shrink: 0;
+}
+
+.brand-logo {
+  display: flex;
+  padding: 10px !important;
+  width: 154px;
+}
+
