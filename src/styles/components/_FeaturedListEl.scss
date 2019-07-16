@@ -1,0 +1,31 @@
+.featured-list-el {
+  display: flex;
+  flex-flow: row nowrap;
+  border: 1px solid black;
+}
+
+.featured-list-el_img {
+  @extend .featured-list-el;
+  width: 92px;
+  height: 140px;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+.featured-list-el_content {
+  @extend .featured-list-el;
+  flex-flow: column;
+  width: 100%;
+}
+
+.featured-list-el_caption {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.featured-list-el_text {
+  @extend .featured-list-el_caption;
+  justify-content: flex-start;
+}
