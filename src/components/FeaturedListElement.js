@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/components/_FeaturedListEl.scss"
 
-const FeaturedListEl = (props) => {
+const FeaturedListElement = (props) => {
     return (
         <div className="featured-list-el">
             <div className="featured-list-el_img">{}</div>
@@ -13,4 +13,4 @@ const FeaturedListEl = (props) => {
     )
 };
 
-export default FeaturedListEl;
+export default FeaturedListElement;

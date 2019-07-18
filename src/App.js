@@ -1,16 +1,16 @@
 import React from "react";
 import {BrowserRouter, Route} from "react-router-dom";
 
-import Home from "./pages/Home/Home";
+import Home from "./components/Home/Home";
 import Header from "./layouts/Header";
 import Footer from "./layouts/Footer";
-import TvShow from "./pages/Tv/TvShow";
-import Movie from "./pages/Movies/Movie";
-import TvShows from "./pages/Tv/TvShows";
-import Movies from "./pages/Movies/Movies";
-import Person from "./pages/People/Person";
-import People from "./pages/People/People";
-import Discover from "./pages/Discover/Discover";
+import TvShows from "./components/Tv/TvShows";
+import Movies from "./components/Movies/Movies";
+import Person from "./components/People/Person";
+import People from "./components/People/People";
+import Discover from "./components/Discover/Discover";
+import Movie from "./components/Movies/Movie";
+import TvShow from "./components/Tv/TvShow";
 
 const App = () => {
     return (

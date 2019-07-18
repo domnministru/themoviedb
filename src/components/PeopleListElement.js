@@ -5,7 +5,7 @@ import {IMG_URL, ORIGINAL} from "../const";
 import NO_IMG from "../img/no-img.png";
 
 
-const PeopleListEl = props => {
+const PeopleListElement = props => {
     const {name, path, known_for} = props;
     const PIC_URL = IMG_URL + ORIGINAL + path;
 
@@ -30,10 +30,10 @@ const PeopleListEl = props => {
     )
 };
 
-PeopleListEl.propTypes = {
+PeopleListElement.propTypes = {
     name: Proptypes.string,
     path: Proptypes.string,
     known_for: Proptypes.array,
 };
 
-export default PeopleListEl;
+export default PeopleListElement;

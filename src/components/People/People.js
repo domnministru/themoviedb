@@ -3,7 +3,8 @@ import Proptypes from "prop-types";
 import {connect} from "react-redux";
 import React, {Component} from "react";
 import {getPeople} from "../../modules/actions/peopleActions";
-import PeopleListEl from "../../components/PeopleListEl";
+import PeopleListElement from "../PeopleListElement";
+import ContentListElement from "../ContentListElement";
 
 class People extends Component {
     componentDidMount() {
@@ -12,6 +13,7 @@ class People extends Component {
 
     render() {
         const {err, loading, people} = this.props;
+        const content_type = "person";
         if (err) console.log(err);
         if (loading) console.log("loading");
 
@@ -21,11 +23,13 @@ class People extends Component {
                     <div className="people-list row">
                         {people.map(person => {
                             return (
-                                <PeopleListEl key={person.id + uuid()}
+                                <PeopleListElement
+                                    key={person.id + uuid()}
                                     id={person.id}
                                     path={person.profile_path}
                                     name={person.name}
                                     known_for={person.known_for}
+                                    content_type={content_type}
                                 />
                             )
                         })}

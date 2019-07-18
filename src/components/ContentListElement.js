@@ -1,13 +1,15 @@
 import React from "react";
+import {Link} from "react-router-dom";
 import {IMG_URL, W185} from "../const";
 import NO_IMG from "../img/no-img.png";
 import "../styles/components/_ContentListEl.scss";
 
-const ContentListEl = props => {
+const ContentListElement = props => {
     console.log("getContent props: ", props);
-    const {path, score, title, release, description} = props;
+    const {id, path, score, title, release, description, content_type} = props;
     const PIC_URL = IMG_URL + W185 + path;
 
+    console.log("contentelement props: ", props);
     return (
         <div className="content-list-el col s12 m6 l6 xl6">
             <div className="card horizontal">
@@ -28,7 +30,7 @@ const ContentListEl = props => {
                         </p>
                     </div>
                     <div className="card-action">
-                        <a href="#">This is a link</a>
+                        <Link to={`${content_type}/${id}`}>Read More</Link>
                     </div>
                 </div>
             </div>
@@ -36,5 +38,5 @@ const ContentListEl = props => {
     )
 };
 
-export default ContentListEl;
+export default ContentListElement;
 

@@ -2,7 +2,7 @@ import uuid from "uuid";
 import Proptypes from "prop-types";
 import {connect} from "react-redux";
 import React, {Component} from "react";
-import ContentListEl from "../../components/ContentListEl";
+import ContentListElement from "../ContentListElement";
 import {getContent} from "../../modules/actions/contentActions";
 
 class TvShows extends Component {
@@ -12,22 +12,25 @@ class TvShows extends Component {
 
     render() {
         const {err, loading, tvs} = this.props;
+        const content_type = "tv";
         if (err) console.log(err);
         if (loading) console.log("loading");
 
-        return(
+        return (
             <div className="tvs-page">
                 <div className="container">
                     <div className="tvs-list row">
                         {tvs.map(tv => {
-                            return(
-                                <ContentListEl key = {uuid()}
-                                    id = {tv.id}
-                                    path = {tv.poster_path}
-                                    score = {tv.vote_average}
-                                    title = {tv.name}
-                                    release = {tv.first_air_date}
-                                    description = {tv.overview}
+                            return (
+                                <ContentListElement
+                                    key={uuid()}
+                                    id={tv.id}
+                                    path={tv.poster_path}
+                                    score={tv.vote_average}
+                                    title={tv.name}
+                                    release={tv.first_air_date}
+                                    description={tv.overview}
+                                    content_type={content_type}
                                 />
                             )
                         })}
@@ -57,4 +60,4 @@ const mapDispatchToProps = {
     getContent
 };
 
-export default connect(mapStateToProps,mapDispatchToProps)(TvShows);
+export default connect(mapStateToProps, mapDispatchToProps)(TvShows);

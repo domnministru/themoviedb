@@ -20,13 +20,13 @@ export const specificContentFail = err => ({
     err
 });
 
-export const content = (content_type = null, id = null) => {
+export const getSpecificContent = (content_type = "", id = "") => {
     return dispatch => {
         dispatch(specificContentBegin());
         axios.get(`${BASE_URL}/${content_type}/${id}?api_key=${KEY}&language=en-US`)
             .then(res => {
-                dispatch(specificContentSuccess(res.data.results));
-                console.log("This Content: ", res.data.results)
+                dispatch(specificContentSuccess(res.data));
+                console.log("This Content: ", res.data)
             })
             .catch(err => dispatch(specificContentFail()));
     };

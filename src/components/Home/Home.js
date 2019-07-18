@@ -2,7 +2,7 @@ import {connect} from "react-redux";
 import React, {Component} from "react";
 import {getPeople} from "../../modules/actions/peopleActions";
 import {getContent} from "../../modules/actions/contentActions";
-import FeaturedListEl from "../../components/FeaturedListEl";
+import FeaturedListElement from "../FeaturedListElement";
 
 class Home extends Component {
     componentDidMount() {
@@ -28,9 +28,9 @@ class Home extends Component {
                     </div>
                     <div className="flexbox">
                         <div className="row">
-                            <div className="col s3"><FeaturedListEl/></div>
-                            <div className="col s3"><FeaturedListEl/></div>
-                            <div className="col s3"><FeaturedListEl/></div>
+                            <div className="col s3"><FeaturedListElement/></div>
+                            <div className="col s3"><FeaturedListElement/></div>
+                            <div className="col s3"><FeaturedListElement/></div>
                         </div>
                     </div>
                 </div>

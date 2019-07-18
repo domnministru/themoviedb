@@ -2,7 +2,7 @@ import uuid from "uuid";
 import Proptypes from "prop-types";
 import {connect} from "react-redux";
 import React, {Component} from "react";
-import ContentListEl from "../../components/ContentListEl";
+import ContentListElement from "../ContentListElement";
 import {getContent} from "../../modules/actions/contentActions";
 
 class Movies extends Component {
@@ -12,6 +12,7 @@ class Movies extends Component {
 
     render() {
         const {err, loading, movies} = this.props;
+        const content_type = "movie";
         if (err) console.log(err);
         if (loading) console.log("loading");
 
@@ -20,14 +21,16 @@ class Movies extends Component {
                 <div className="container">
                     <div className="movies-list row">
                         {movies.map(movie => {
-                            return(
-                                <ContentListEl key = {uuid()}
-                                    id = {movie.id}
-                                    path = {movie.poster_path}
-                                    score = {movie.vote_average}
-                                    title = {movie.title}
-                                    release = {movie.release_date}
-                                    description = {movie.overview}
+                            return (
+                                <ContentListElement
+                                    key={uuid()}
+                                    id={movie.id}
+                                    path={movie.poster_path}
+                                    score={movie.vote_average}
+                                    title={movie.title}
+                                    release={movie.release_date}
+                                    description={movie.overview}
+                                    content_type={content_type}
                                 />
                             )
                         })}
@@ -57,4 +60,4 @@ const mapDispatchToProps = {
     getContent
 };
 
-export default connect(mapStateToProps,mapDispatchToProps)(Movies);
+export default connect(mapStateToProps, mapDispatchToProps)(Movies);
